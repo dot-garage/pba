@@ -1,0 +1,215 @@
+
+
+.login,.register {
+  text-align: center;
+}
+
+.register-table input{
+  width: 250px;
+  margin-bottom: 10px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+.login h2, .register h2{
+  background-color: #000;
+  color: white;
+}
+
+table,td,th{
+  border: 1px solid #ccc;
+  line-height: 150%;
+  padding: 20px;
+}
+
+/* === ログイン画面 ============================== */
+.br-sp {
+  display: none;
+}
+
+.login-table{
+  width: 500px;
+  border-collapse: collapse;
+  margin: 20px auto;
+  font-size: 16px;
+}
+
+.login-table td {
+  text-align: left;
+}
+
+.login input{
+  height: 20px;
+  vertical-align: middle;
+}
+
+#loginbtn,#registerbtn,#modalbutton {
+  height: 40px;
+  width: 100px;
+  background-color: #0d4faf;
+  border-radius: 10%;
+  box-shadow: 3px 3px 3px gray;
+  border-bottom: solid 3px gray;
+  transition: 0.2s;
+  color: white;
+  font-weight: bold;
+  margin: 5px 10px;
+}
+
+#loginbtn,#registerbtn,#modalbutton:active{
+  transform: translateY(2px);
+}
+
+/* === アカウント登録画面 ============================== */
+.register-table{
+  width: 700px;
+  border-collapse: collapse;
+  margin: 20px auto;
+  font-size: 12px;
+}
+
+.form_reg {
+  width: 100%;
+}
+
+.register-table td {
+  text-align: left;
+}
+
+.gray{
+  color:#999;
+}
+
+.red {
+  color: red;
+  margin-left: 3px;
+  font-size: 15px;
+}
+
+/* === モーダル非表示（初期） ============================== */
+.modalNoDisp {
+  display : none;
+}
+
+/* === モーダルバックグランド ============================== */
+.modalBg {
+  position   : fixed;
+  overflow   : hidden;
+  top        : 0;
+  right      : 0;
+  bottom     : 0;
+  left       : 0;
+  background : radial-gradient(circle at 50% 50%,
+                               rgba(0, 0, 0, 0.67),
+                               rgba(0, 0, 0, 0.47));
+  z-index    : 10;
+}
+
+/* === モーダルバックグランド：OPEN時のアニメーション ====== */
+.modalBgOpen {
+  animation  : bgOpenAnime 0.8s ease;
+}
+@keyframes bgOpenAnime {                     /* フェードイン */
+   0% { opacity: 0 }
+ 100% { opacity: 1 }
+}
+
+/* === モーダルバックグランド：CLOSE時のアニメーション ===== */
+.modalBgClose {
+  bottom     : 100%;
+  animation  : bgCloseAnime 0.8s ease;
+}
+@keyframes bgCloseAnime {                     /* フェードイン */
+   0% { opacity: 1; bottom: 0 }
+ 100% { opacity: 0; bottom: 0 }
+}
+
+/* === モーダルウインド ==================================== */
+.modalBg .modalWindow {
+                             /* モーダルウインドを中心に表示 */
+  position      : absolute;
+  top           : 50%;
+  left          : 50%;
+  transform     : translate(-50%, -50%);
+  z-index       : 11;
+           /* ↓モーダルウインドウの見た目：変更してください */
+  width         : 400px;
+  min-height    : 300px;
+  background    : #fff;
+  border        : 3px solid #35557f;
+  border-radius : 10px;
+  font-size     : 1.2rem;
+  text-align    : center;
+}
+
+.modalbutton input {
+  display: inline-block;
+}
+
+.modaltitle {
+  text-align: center;
+}
+
+.output {
+  line-height: 45px;
+  text-align: left;
+}
+
+/* --- スマホ用 css ----------------- */
+@media screen and (max-width:480px) {
+  .br-sp {
+    display: block;
+  }
+
+  /* ログイン画面 */
+  .loginform {
+    text-align:center;
+    width: 100%;
+  }
+
+  .login-table {
+    float: left;
+    width: 100%;
+	}
+  .login-table tr {
+    width: 100%;
+  }
+
+  .cellleft{
+    width: 350px;
+  }
+
+  .cellright{
+    width: 250px;
+  }
+
+  /* アカウント登録画面 */
+  .form_reg {
+    text-align:center;
+    width: 100%;
+  }
+
+  .register-table {
+    float: left;
+    width: 100%;
+	}
+
+	.register-table td,tr{
+    float: left;
+    display: block;
+    width: 94%;
+	}
+
+  .register-table input{
+    width: 290px;
+  }
+
+  /* モーダル画面 */
+  .modalBg .modalWindow {
+    width: 80%;
+    font-size: 1rem;
+  }
+  #modalbutton {
+    margin: 15px;
+  }
+}

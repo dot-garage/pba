@@ -1,0 +1,300 @@
+
+header {
+  max-height:330px;
+  width: 100%;
+  background-color:#000;
+  overflow: hidden;
+  text-align: center;
+}
+
+.header-left {
+  padding-top: 10px;
+  width: 100%;
+  display: flex;
+}
+
+.title_img {
+  width: 100%;
+}
+
+.header-left .title_img img {
+  margin: 0 5px;
+}
+
+.header-right {
+  display: flex;
+  padding-top: 10px;  
+	width: 100%;
+}
+
+.container {
+  padding: 0 5px;
+  margin: 0 10px;
+}
+
+/* SNSアイコン ここから */
+.follow-me {
+  list-style: none;
+  overflow: hidden;
+  padding: 0;
+}
+
+.follow-me ul {
+  text-align: center;
+	width: 600px; /* SNSアイコンを表示する領域（アカウント登録も含む） */
+}
+
+.follow-me li {
+  float: left;
+  margin: 0 8px 8px 0;
+  padding: 0;
+}
+
+.follow-me li a::before { /* アイコン１個ずつの設定 */
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  color: #fff;
+  display: inline-block;
+  font-family: FontAwesome;
+  font-size: 16px;
+  height: 44px; /* Button height */
+  line-height: 44px; /* Button height */
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  text-align: center;
+  width: 44px; /* Button width */
+}
+
+.follow-me li a[href*="facebook.com"]::before {
+  border-color: #3b5998;
+  background-color: #3b5998;
+  content: "\f09a";
+}
+.follow-me li a[href*="twitter.com"]::before {
+  border-color: #55acee;
+  background-color: #55acee;
+  content: "\f099";
+}
+.follow-me li a[href*="instagram.com"]::before {
+  border-color: #CF2E92;
+  background-color: #CF2E92;
+  content: "\f16d";
+}
+.follow-me li a[href*="youtube.com"]::before {
+  border-color: #cd201f;
+  background-color: #cd201f;
+  content: "\f16a";
+}
+
+.follow-me li a:hover::before {
+  background-color: #fff;
+}
+.follow-me li a[href*="facebook.com"]:hover::before {
+  color: #3b5998;
+}
+.follow-me li a[href*="twitter.com"]:hover::before {
+  color: #55acee;
+}
+.follow-me li a[href*="instagram.com"]:hover::before {
+  color: #CF2E92;
+}
+.follow-me li a[href*="youtube.com"]:hover::before {
+  color: #cd201f;
+}
+/* SNSアイコン ここまで */
+
+.fan_register {
+  list-style: none;
+  overflow: hidden;
+  padding: 0;
+}
+
+.fan_register ul {
+	width: 300px; /* SNSアイコンを表示する領域（アカウント登録も含む） */
+}
+
+.fan_register li {
+  float: left;
+  margin: 0 8px 8px 0;
+  padding: 0;
+}
+
+.login {
+  background-color: #000084;
+  color: #fff;
+  margin-right: 5px;
+}
+
+.login:hover {
+  background-color: #fff;
+  color: #000084;
+}
+
+.new {
+  background-color: #eaa000;
+  color: #fff;
+}
+
+.new:hover {
+  background-color: #fff;
+  color: #eaa000;
+}
+
+.btn {
+  width: 100px;
+  padding: 8px 24px;
+  display: inline-block;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* 画像スライド表示 ここから */
+
+.slider-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 70vh;
+}
+
+.slider-container .slider-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400%;
+  height: 100%;
+  float: left;
+  animation: animate 20s linear infinite;
+}
+
+.slider-container .slider-wrapper .slide {
+  position: relative;
+  width: 25%;
+  height: 100%;
+  float: left;
+}
+
+.slider-container .slider-wrapper .slide .caption{
+  position: absolute;
+  bottom: 60px;
+  left: 60px;
+  right: 60px;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  transition: 0.5s;
+}
+
+.slider-container .slider-wrapper .slide .caption h2{
+  margin: 0 0 20px;
+  padding: 0;
+  color: #fff;
+  font-size: 48px;
+  transition: 0.5s;
+}
+
+.slider-container .slider-wrapper .slide .caption p{
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-size: 18px;
+  transition: 0.5s;
+}
+.slider-container .slider-wrapper .slide.slide1{
+  background: url(../img/image1.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.slider-container .slider-wrapper .slide.slide2{
+  background: url(../img/image2.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.slider-container .slider-wrapper .slide.slide3{
+  background: url(../img/image3.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+@keyframes animate {
+  0% {
+    left: 0;
+  }
+  20%{
+    left: 0;
+  }
+  25%{
+    left: -100%;
+  }
+  45%{
+    left: -100%;
+  }
+  50%{
+    left: -200%;
+  }
+  70%{
+    left: -200%;
+  }
+  75%{
+    left: -300%;
+  }
+  95%{
+    left: -300%;
+  }
+  100%{
+    left: -300%;
+  }
+}
+
+/* 画像スライド表示 ここまで */
+
+/* --- スマホ用 css ----------------- */
+@media screen and (max-width:560px) {
+  .header-right {
+    display: block;
+  }  
+}
+@media screen and (max-width:480px) {
+	header{
+		max-height: 430px;
+	}
+	.title_img {
+		display: inline-block;
+	}
+	.title_img img {
+		width: 250px;
+	}
+	.header-left {
+		width: 100%;
+	}
+	.header-right {
+		width: 100%;
+	}
+	.cp_navi a{
+		font-size: smaller;
+	}
+  .slider-container .slider-wrapper .slide .caption{
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    padding: 20px;
+  }
+  
+  .slider-container .slider-wrapper .slide .caption h2{
+    margin: 0 0 10px;
+    padding: 0;
+    color: #fff;
+    font-size: 30px;
+  }
+  
+  .slider-container .slider-wrapper .slide .caption p{
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-size: 10px;
+  }
+}

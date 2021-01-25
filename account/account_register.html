@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang=jp dir="ltr">
+  <link rel="stylesheet" href="../assets/css/account.css">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>アカウント登録</title>
+  </head>
+  <body>
+    <script src="../assets/js/account.js"></script>
+    <header>
+    </header>
+    <div class="register">
+      <h2>ユーザー登録</h2>
+      <p><span class="red">*</span>は必須項目</p>
+      <form class="form_reg" action="index.html" method="post">
+        <table class = "register-table" id="register_table">
+          <tbody>
+            <tr>
+              <td>アカウントID<span class="red">*</span></td>
+              <td>
+                  <input type="text" name="reg_account" id="reg_account"
+                  maxlength="16" pattern="^([a-zA-Z0-9]{4,16})$" onchange="checkedId(this.value)">
+                  &nbsp;&nbsp;<span class="gray"><br class="br-sp">※半角英数字（小文字のみ）</span>
+                <br>
+                ※４文字〜１６文字でご利用できます。
+              </td>
+            </tr>
+            <tr>
+              <td>パスワード<span class="red">*</span></td>
+              <td>
+                  <input type="text" name="reg_password" id="reg_password" maxlength="16" pattern="^([a-zA-Z0-9]{6,16})$">
+                  &nbsp;&nbsp;<span class="gray"><br class="br-sp">※半角英数字（小文字のみ）</span>
+                <br>
+                ※6文字以上１６文字以下
+                <br>
+                ※アカウントIDと同一の文字列は使用できません。
+              </td>
+            </tr>
+            <tr>
+              <td>メールアドレス<span class="red">*</span></td>
+              <td>
+                <input type="text" name="mail_address" id="mail_address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+                &nbsp;&nbsp;<span class="gray"><br class="br-sp">※半角英数字</span>
+                <br>
+                ※メールアドレスに入力間違いがございますと、
+                <br>
+                ご指定のアカウントIDが使えなくなります。<br class="br-sp">必ずお確かめください。
+              </td>
+            </tr>
+            <tr>
+              <td>名前<span class="red">*</span></td>
+              <td>
+                <input type="text" name="reg_name" id="reg_name">
+                <br>
+                ※サイト上に表示されるニックネームです。
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <input class="registerbtn" id="registerbtn" type="button" value="新規登録" onclick="modalOpen()">
+        <!-- モーダルウインドウのエリア -->
+        <div id="modalArea" class="modalNoDisp">
+          <div class="modalWindow"> <!-- ここがウインドウとなります -->
+            <div class="modaltitle">
+              <p>こちらでよろしいでしょうか？</p>
+            </div>
+            <div class="output" id="output"></div>
+            <div class="modalbutton">
+              <input id="modalbutton" type="button" value="戻る" onclick="modalClose()">
+              <input id="modalbutton" type="button" value="登録" onclick="modalClose()">
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <footer>
+    </footer>
+  </body>
+</html>

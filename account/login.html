@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang=jp dir="ltr">
+  <link rel="stylesheet" href="../assets/css/account.css">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>アカウント登録</title>
+  </head>
+  <body>
+    <script src="../assets/js/account.js"></script>
+    <header>
+    </header>
+    <div class="login">
+      <h2>ログイン</h2>
+      <p>登録時に入力したIDとパスワードを<br class="br-sp">設定してください</p>
+      <form class="loginform" action="index.html" method="post">
+        <table class = "login-table">
+          <tbody>
+            <tr>
+              <td class="cellleft">アカウントID</td>
+              <td class="cellright">
+                <input type="text" name="login_account" id="login_account">
+              </td>
+            </tr>
+            <tr>
+              <td class="cellleft">パスワード</td>
+              <td class="cellright"><input type="password" name="login_password" id="login_password" maxlength="16"></td>
+            </tr>
+          </tbody>
+        </table>
+        <input class="loginbtn" id="loginbtn" type="submit" value="ログイン">
+      </form>
+    </div>
+    <footer>
+    </footer>
+  </body>
+</html>

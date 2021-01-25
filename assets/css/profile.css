@@ -1,0 +1,274 @@
+.profile-wrapper {
+  min-height: 330px; /* デフォルトの高さ */
+  max-height:900px;  /* スマホ用を考慮して最大値決める */
+  width: 100%;
+  border-bottom: 2px solid #fff;
+  background-color: #000;
+  color: white;
+  display: flex;
+}
+
+.introduce-wrapper{
+  max-height:600px;
+  width: 100%;
+  text-align: center;
+  border-bottom: 2px solid #fff;
+  background-color: #000;
+  color: white;
+}
+
+.youtube-wrapper {
+  max-height: 1200px;
+  width: 100%;
+  background-color: #000;
+  color: white;
+
+  /* ▼ inline-block時の定義 */
+  letter-spacing : 0;                    /* 1行の高さを初期化 */
+  line-height    : 1;                    /* 文字間隔を初期化 */
+  text-align     : center;               /* 横位置定義      */
+}
+
+.history-wrapper {
+  height: 400px;
+  display: flex;
+}
+
+/************* プロフィールエリア ここから **************/
+.profile {
+  padding-top: 30px;
+  width: 50%;
+  text-align: center;
+}
+
+.cp_box *, .cp_box *:before, .cp_box *:after {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.cp_box {
+	width: 50%;
+  padding-top: 30px;
+	position: relative;
+}
+.cp_box label {
+	position: absolute;
+	width: 100%;
+	z-index: 1;
+	bottom: 20px;
+	height: 140px; /* グラデーションの高さ */
+	cursor: pointer;
+	text-align: center;
+	/* 以下グラデーションは背景を自身のサイトに合わせて設定してください */
+	background: linear-gradient(to bottom, rgba(250, 252, 252, 0) 0%, rgba(250, 252, 252, 0.95) 90%);
+}
+
+.cp_box input:checked + label {
+	background: inherit; /* 開いた時にグラデーションを消す */
+}
+
+.cp_box label:after {
+	line-height: 2.5rem;
+	position: absolute;
+	z-index: 2;
+	bottom: 20px;
+	left: 50%;
+	width: 100%;
+	font-family: FontAwesome;
+	content: '\f13a'' 続きをよむ';
+	transform: translate(-50%, 0);
+	letter-spacing: 0.05em;
+	color: #ffffff;
+	border-radius: 20px;
+	background-color: rgba(210, 0, 0, 1);
+}
+.cp_box input {
+	display: none;
+}
+.cp_box .cp_container {
+	overflow: hidden;
+  /* line-height: 70%; 行間指定 */
+	height: 150px; /* 開く前に見えている部分の高さ */
+	transition: all 0.5s;
+}
+.cp_box input:checked + label {
+	/* display: none ; 閉じるボタンを消す場合解放 */
+}
+.cp_box input:checked + label:after {
+	font-family: FontAwesome;
+	content: '\f139'' 閉じる';
+}
+.cp_box input:checked ~ .cp_container {
+	height: auto;
+	padding-bottom: 90px; /* 閉じるボタンのbottomからの位置 */
+	transition: all 0.5s;
+}
+/************* プロフィールエリア ここまで **************/
+
+
+/************* プロフィール動画 ここから  **************/
+.introduce-wrapper h2{
+  margin: 0px;
+  padding: 30px 0px;
+}
+
+.iframe-content {
+  position: relative;
+  padding: 75% 0 0 0;
+  width: 100%;
+}
+
+.iframe-content iframe {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  width: 70%;
+  height: 45%;
+}
+
+/************ プロフィール動画 ここまで ***************/
+
+/********* youtube動画 一覧表示 ここから ************/
+.youtube-wrapper h2{
+  margin: 0px;
+  padding: 20px 0px;
+}
+
+.movie {
+  /* float: left; */
+  width      : 300px;                /* サムネイル画像BOXの幅  */
+  height     : 250px;                /* サムネイル画像BOXの高さ */
+  margin     : 2px;                  /* サンプルBOXの間       */
+  text-align : center;
+  /* ▼ inline-blockの定義 */
+  display    : inline-block;         /* インラインブロック化     */
+}
+
+.movie a {
+  position: relative; /* aタグが効かなかったため追加 */
+  text-decoration: none;
+}
+
+.movie p {
+  margin  : 0px;
+  padding : 0px 10px;
+  color   : white;
+}
+
+.movie img{
+  width: 80%;
+  height: 80%;
+}
+/********** youtube動画 一覧表示 ここまで ***********/
+
+/********* 更新履歴 twitter表示 ここから ************/
+.hist-disp {
+  border:3px solid #e76915;
+  width: 50%;
+  position: relative;
+  overflow: scroll;
+}
+.twitter-disp {
+  border:3px solid #1DA1F2;
+  width: 50%;
+  position: relative;
+  overflow: scroll;
+}
+.hist-disp li{
+  border-bottom:1px dotted #000;
+  list-style:none;
+  padding:10px;
+  width:800px;
+}
+.hist-disp a{
+  color:#000;
+  text-decoration:none;
+}
+.hist-disp span{
+  width: 100px;
+  border-radius:3px;
+  color:#fff;
+  display:inline-block;
+  text-align: center;
+  margin-right:20px;
+  padding:5px;
+}
+.hist-disp time{
+  display: inline-block;
+  font-weight: bold;
+  margin-right:40px;
+}
+.hist-disp p{
+  color:#1c448d;
+  display: inline-block;
+}
+
+.new_label::after{
+  content:"NEW";
+  color: #d10606;
+  font-size: 1.1rem;
+  border: 1px solid #d10606;
+  padding: 4px 8px;
+  margin: 0 0 0 20px;
+  display: inline-block;
+  line-height: 1;
+}
+.youtube{
+  background-color:red;
+}
+.personal{
+  background-color:blue;
+}
+.info{
+  background-color:green;
+}
+/********* 更新履歴 twitter表示 ここまで ************/
+
+@media screen and (max-width:480px) {
+  .iframe-content iframe {
+      width: 100%;
+      height: 90%;
+  }
+  .cp_box label {
+    width : 100%;
+  }
+  .movie {
+    width : 320px; /* サムネイル画像BOXの幅  */
+  }
+  .profile-wrapper {
+    display: block;
+  }
+  .profile {
+    width: 100%;
+  }
+  .cp_box {
+    width: 100%;
+  }
+  .history-wrapper {
+    display: block;
+    height: 612px;
+  }
+  .hist-disp {
+    width: 100%;
+    height: 300px;
+  }
+  .hist-disp dl{
+    width:100%;
+  }
+  .hist-disp dt{
+    font-size: 12px;
+  } 
+  .hist-disp dd{
+    font-size: 12px;
+  }
+  .hist-disp a{
+    font-size: 12px;
+  }
+  
+  .twitter-disp {
+    height: 300px;
+    width: 100%;
+  }
+}

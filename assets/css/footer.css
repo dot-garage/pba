@@ -1,0 +1,124 @@
+.br-sp {
+  display: none;
+}
+
+.index_footer {
+  height:180px;
+  width: 100%;
+  /*background-color: rgba(0, 47, 74, 0.9);*/
+  background-color:#000;
+  border-top: 2px solid #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 11;
+}
+
+.message-wrapper {
+  border-bottom: 2px solid #fff;
+  height: 550px;
+/*  padding-bottom: 80px; */
+  text-align: center;
+  background-color:#000;
+  color: white;
+  padding-bottom: 130px;
+}
+
+.message-wrapper h2{
+  margin: 0px;
+  padding: 10px;
+}
+
+/* SNSアイコン ここから */
+.follow-fotter {
+  list-style: none;
+  margin: 0 0 -8px;
+  overflow: hidden;
+  padding: 0;
+}
+
+.follow-fotter li {
+  display:inline-block;
+  margin: 0 8px 8px 0;
+  padding: 0;
+}
+
+.follow-fotter li a::before {
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  color: #fff;
+  display: inline-block;
+  font-family: FontAwesome;
+  font-size: 16px;
+  height: 44px; /* Button height */
+  line-height: 44px; /* Button height */
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  text-align: center;
+  width: 44px; /* Button width */
+}
+
+.follow-fotter li a[href*="facebook.com"]::before {
+  border-color: #3b5998;
+  background-color: #3b5998;
+  content: "\f09a";
+}
+.follow-fotter li a[href*="twitter.com"]::before {
+  border-color: #55acee;
+  background-color: #55acee;
+  content: "\f099";
+}
+.follow-fotter li a[href*="instagram.com"]::before {
+  border-color: #CF2E92;
+  background-color: #CF2E92;
+  content: "\f16d";
+}
+.follow-fotter li a[href*="youtube.com"]::before {
+  border-color: #cd201f;
+  background-color: #cd201f;
+  content: "\f16a";
+}
+.follow-fotter li a:hover::before {
+  background-color: #fff;
+}
+.follow-fotter li a[href*="facebook.com"]:hover::before {
+  color: #3b5998;
+}
+.follow-fotter li a[href*="twitter.com"]:hover::before {
+  color: #55acee;
+}
+.follow-fotter li a[href*="instagram.com"]:hover::before {
+  color: #CF2E92;
+}
+.follow-fotter li a[href*="youtube.com"]:hover::before {
+  color: #cd201f;
+}
+/* SNSアイコン ここまで */
+
+.footer_register {
+  margin: 5px 0;
+ text-align: center;
+}
+
+.btn-fotter {
+  width: 250px;
+  margin-top: 10px;
+  padding: 8px 24px;
+  font-size: 1rem;
+  color: white;
+  background-color: orangered;
+  display: inline-block;
+  border-radius: 4px;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* --- スマホ用 css ----------------- */
+@media screen and (max-width:480px) {
+  .btn-fotter {
+    width: 180px;
+  }
+  .br-sp {
+    display: block;
+  }
+}

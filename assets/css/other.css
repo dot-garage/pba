@@ -1,0 +1,61 @@
+body {
+    font-family: "游ゴシック", "YuGothic, ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+}
+
+.kiyaku-container {
+    width: 720px;
+    margin: 0 auto;
+}
+
+.logo {
+    padding: 20px, 0;
+    text-align: center;
+}
+.logo img {
+    width: 500px;
+}
+
+.kiyaku h2{
+    text-align: center;
+    background-color: black;
+    width: 720px;
+    color: white;
+}
+
+.other_footer {
+    background-color: black;
+    color: white;
+}
+
+.other_footer ul {
+    overflow: hidden;
+    margin-bottom: 10px;
+    padding-top: 3px;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.other_footer ul li {
+    padding-top: 10px;
+}
+
+.other_footer ul li a {
+    color: white;
+    border-bottom:solid 3px white ;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 3px 5px;
+    margin: 0 5px;
+    display: block;
+}
+
+.other_footer ul li a:hover {
+    border-bottom:solid 3px red ;
+}
+
+.other_footer p {
+    font-size: 12px;
+    text-align: right;
+    margin: 0;
+}

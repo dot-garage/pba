@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="jp" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>PBA サンプルサイト</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/profile.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/other.css">
+    <!-- youtube動画モーダル表示 -->
+    <link rel="stylesheet" href="assets/css/colorbox.css" />
+    <!-- SNSアイコン -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/bc92a187b7.js" crossorigin="anonymous"></script>
+    <!-- jsファイル -->
+    <script src="assets/js/plugin/jquery.colorbox.js"></script>
+    <script src="assets/js/profile_top.js"></script>
+  </head>
+  <body>
+    <!-- ヘッダー -->
+    <header>
+      <div class="container">
+        <!-- ブランドアイコンを表示する -->
+        <div class="header-left">
+          <div class="header_logo">
+            <img src="assets/img/common/logo.jpg" width="100" height="100">
+          </div>
+          <div class="title_img">
+            <img src="assets/img/common/title.png" width="800" height="100">
+          </div>
+        </div>
+        <!-- SNSリンク、および会員ログイン・新規登録 -->
+        <div class="header-right">
+          <ul class="follow-me">
+            <li>
+              <a href="https://www.twitter.com"></a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com"></a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com"></a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com"></a>
+            </li>
+          </ul>
+          <ul class="fan_register">
+            <li>
+              <a href="./account/login.html" class="login btn">会員ログイン</a>
+            </li>
+            <li>
+              <a href="./account/account_register.html" class="new btn">新規登録</a>
+            </li>
+          </ul>
+          <!-- メニューバー -->
+        </div>
+      </div>
+    </header>
+    <!-- CM用の画像を５秒間隔でスライド表示 -->
+    <div class="slider-container">
+      <div class="slider-wrapper">
+        <div class="slide slide1">
+          <div class="caption">
+            <h2>Slide1</h2>
+            <p>ファッション業界でしばしば大ヒットを生み出してきたのは、
+              有力デザイナーや人気キャラクターとのコラボレーション企画です。
+              「ユニクロ（UNIQLO）」がファッションデザイナーのジル・サンダー氏と組んだ
+              コレクション「+J（プラスジェイ）」も11月13日の発売直後から、
+              公式サイトがつながりにくい状態になるほど大ヒット。</p>
+          </div>
+        </div>
+        <div class="slide slide2">
+          <div class="caption">
+            <h2>Slide2</h2>
+            <p>ファッション業界でしばしば大ヒットを生み出してきたのは、
+              有力デザイナーや人気キャラクターとのコラボレーション企画です。
+              「ユニクロ（UNIQLO）」がファッションデザイナーのジル・サンダー氏と組んだ
+              コレクション「+J（プラスジェイ）」も11月13日の発売直後から、
+              公式サイトがつながりにくい状態になるほど大ヒット。</p>
+          </div>
+        </div>
+        <div class="slide slide3">
+          <div class="caption">
+            <h2>Slide3</h2>
+            <p>ファッション業界でしばしば大ヒットを生み出してきたのは、
+              有力デザイナーや人気キャラクターとのコラボレーション企画です。
+              「ユニクロ（UNIQLO）」がファッションデザイナーのジル・サンダー氏と組んだ
+              コレクション「+J（プラスジェイ）」も11月13日の発売直後から、
+              公式サイトがつながりにくい状態になるほど大ヒット。</p>
+          </div>
+        </div>
+        <div class="slide slide1">
+          <div class="caption">
+            <h2>Slide1</h2>
+            <p>ファッション業界でしばしば大ヒットを生み出してきたのは、
+              有力デザイナーや人気キャラクターとのコラボレーション企画です。
+              「ユニクロ（UNIQLO）」がファッションデザイナーのジル・サンダー氏と組んだ
+              コレクション「+J（プラスジェイ）」も11月13日の発売直後から、
+              公式サイトがつながりにくい状態になるほど大ヒット。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- プロフィール画像・紹介文を表示 -->
+    <div class="profile-wrapper" id="profile-wrapper">
+      <div class="profile">
+        <h2>〇〇のプロフィール</h2>
+        <img src="assets/img/common/logo.jpg" width="300" height="300">
+      </div>
+      <div class="cp_box">
+      	<input id="cp01" type="checkbox">
+       	<label for="cp01"></label>
+       	<div class="cp_container">
+       		<h3>テキスト</h3>
+          <br>
+          <p>テキスト</p>
+          <p>テキスト</p>
+          <p>テキスト</p>
+          <p>テキスト</p>
+          <p>テキスト</p>
+          <p>テキスト</p>
+          <p>テキスト</p>
+          <p>テキスト</p>
+          <p>テキスト</p>
+          <p>テキスト</p>
+          <p>テキスト</p>
+          <p>テキスト</p>
+      	</div>
+      </div>
+    </div>
+    <div class="introduce-wrapper" id="introduce-wrapper">
+      <h2>〇〇の紹介動画</h2>
+      <div class="container">
+        <div class="iframe-content">
+          <iframe src="https://www.youtube.com/embed/tCZdYqG4QcI?controls=0&rel=0&fs=0&modestbranding=1"
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+      </div>
+    </div>
+    </div>
+    <div class="youtube-wrapper" id="youtube-wrapper">
+      <h2>youtube動画リンク</h2>
+      <div class="movie">
+        <a class="youtube-modal1" href="https://www.youtube.com/embed/7Eb9EuJIlSg?controls=0&rel=0&fs=0&modestbranding=1&autoplay=1">
+          <img src="http://img.youtube.com/vi/7Eb9EuJIlSg/hqdefault.jpg" alt="サムネイル">
+          <p>タイトル１</p>
+        </a>
+      </div>
+      <div class="movie">
+        <a class="youtube-modal1" href="https://www.youtube.com/embed/fTKnsnlRkUk?controls=0&rel=0&fs=0&modestbranding=1&autoplay=1">
+          <img src="http://img.youtube.com/vi/fTKnsnlRkUk/hqdefault.jpg" alt="サムネイル">
+          <p>タイトル２</p>
+        </a>
+      </div>
+      <div class="movie">
+        <a class="youtube-modal1" href="https://www.youtube.com/embed/jNHUiCQNEi0?controls=0&rel=0&fs=0&modestbranding=1&autoplay=1">
+          <img src="http://img.youtube.com/vi/jNHUiCQNEi0/hqdefault.jpg" alt="サムネイル">
+          <p>タイトル３</p>
+        </a>
+      </div>
+      <div class="movie">
+        <a class="youtube-modal1" href="https://www.youtube.com/embed/r9Qaipy7Llg?controls=0&rel=0&fs=0&modestbranding=1&autoplay=1">
+          <img src="http://img.youtube.com/vi/r9Qaipy7Llg/hqdefault.jpg" alt="サムネイル">
+          <p>タイトル４</p>
+        </a>
+      </div>
+    </div>
+    <div class="history-wrapper">
+      <div class="twitter-disp">
+        <a class="twitter-timeline" href="https://twitter.com/howto_dekiru?ref_src=twsrc%5Etfw">
+          ＠できる大人の Tweets </a> 
+          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
+      <div class="hist-disp">
+        <ul>
+          <li>
+            <a href="#">
+              <span class="info">お知らせ</span>
+              <time datetime="2019-01-01">[2019.01.01]</time>
+              <p class="new_label">ニュースニュースニュースニュースニュース</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="personal">ファン限定</span>
+              <time datetime="2019-01-01">[2019.01.01]</time>
+              <p class="new_label">ニュースニュースニュースニュースニュース</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="youtube">youtube</span>
+              <time datetime="2019-01-01">[2019.01.01]</time>
+              <p class="new_label">ニュースニュースニュースニュースニュース</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="message-wrapper">
+      <div class="container">
+        <h2>あなたも</h2>
+        <h3>一緒にチャレンジを</h3>
+        <ul class="follow-fotter">
+          <li>
+            <a href="https://www.twitter.com"></a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com"></a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com"></a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com"></a>
+          </li>
+        </ul>
+        <br>
+        <a href="./account/account_register.html"><img src="assets/img/common/fan_reg.jpg" width="300" height="300"></a>
+      </div>
+    </div>
+    <footer class="index_footer other_footer">
+      <div class="footer_register">
+        <a href="./account/account_register.html" class="btn-fotter">ファン登録して<br class="br-sp">限定情報をゲット</a>
+      </div>
+      <ul>
+        <li><a href="#">TOP</a></li>
+        <li><a href="common/kiyaku.html">会員規約</a></li>
+        <li><a href="common/pp.html">プライバシーポリシー</a></li>
+      </ul>
+      <p>personal branding academy All Right Reserved.</p>
+      <p>無断転用・引用等はお断り致します</p>
+</footer>
+  </body>
+</html>
