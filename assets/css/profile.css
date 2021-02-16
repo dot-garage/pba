@@ -125,7 +125,7 @@
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   width: 70%;
-  height: 45%;
+  height: 40%;
 }
 
 /************ プロフィール動画 ここまで ***************/
@@ -226,7 +226,7 @@
 }
 /********* 更新履歴 twitter表示 ここまで ************/
 
-@media screen and (max-width:480px) {
+@media screen and (max-width:768px) {
   .iframe-content iframe {
       width: 100%;
       height: 90%;

@@ -14,9 +14,13 @@
 .login h2, .register h2{
   background-color: #000;
   color: white;
+  width: 100%;
 }
 
-table,td,th{
+.register-table th,
+.register-table td,
+.login-table th,
+.login-table td {
   border: 1px solid #ccc;
   line-height: 150%;
   padding: 20px;
@@ -34,7 +38,7 @@ table,td,th{
   font-size: 16px;
 }
 
-.login-table td {
+.login-table th,td {
   text-align: left;
 }
 
@@ -72,7 +76,7 @@ table,td,th{
   width: 100%;
 }
 
-.register-table td {
+.register-table th,td {
   text-align: left;
 }
 
@@ -156,7 +160,7 @@ table,td,th{
 }
 
 /* --- スマホ用 css ----------------- */
-@media screen and (max-width:480px) {
+@media screen and (max-width:768px) {
   .br-sp {
     display: block;
   }
@@ -168,20 +172,8 @@ table,td,th{
   }
 
   .login-table {
-    float: left;
     width: 100%;
 	}
-  .login-table tr {
-    width: 100%;
-  }
-
-  .cellleft{
-    width: 350px;
-  }
-
-  .cellright{
-    width: 250px;
-  }
 
   /* アカウント登録画面 */
   .form_reg {
@@ -189,18 +181,25 @@ table,td,th{
     width: 100%;
   }
 
+  .last td:last-child {
+    border-bottom: solid 1px #ccc;
+    width: 100%;
+  }
+  
   .register-table {
-    float: left;
     width: 100%;
 	}
 
-	.register-table td,tr{
-    float: left;
+  .register-table th,
+  .register-table td,
+  .login-table th,
+  .login-table td {
     display: block;
-    width: 94%;
+    width: auto !important;
 	}
 
-  .register-table input{
+  .register-table input,
+  .login-table input{
     width: 290px;
   }
 

@@ -4,25 +4,30 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>PBA サンプルサイト</title>
-    <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="assets/css/header.css">
-    <link rel="stylesheet" href="assets/css/profile.css">
-    <link rel="stylesheet" href="assets/css/footer.css">
-    <link rel="stylesheet" href="assets/css/other.css">
+    <link rel="stylesheet" href="assets/css/reset.css?2" type="text/css">
+    <link rel="stylesheet" href="assets/css/header.css?2" type="text/css">
+    <link rel="stylesheet" href="assets/css/profile.css?2" type="text/css">
+    <link rel="stylesheet" href="assets/css/footer.css?2" type="text/css">
+    <link rel="stylesheet" href="assets/css/other.css?2" type="text/css">
     <!-- youtube動画モーダル表示 -->
-    <link rel="stylesheet" href="assets/css/colorbox.css" />
+    <link rel="stylesheet" href="assets/css/colorbox.css?2" type="text/css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- SNSアイコン -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/bc92a187b7.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
     <!-- jsファイル -->
     <script src="assets/js/plugin/jquery.colorbox.js"></script>
     <script src="assets/js/profile_top.js"></script>
-  </head>
-  <body>
+    <!-- jsファイル(bootstlap) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <!-- ヘッダー -->
     <header>
-      <div class="container">
+      <div class="header-container">
         <!-- ブランドアイコンを表示する -->
         <div class="header-left">
           <div class="header_logo">
@@ -50,10 +55,10 @@
           </ul>
           <ul class="fan_register">
             <li>
-              <a href="./account/login.html" class="login btn">会員ログイン</a>
+              <a href="./account/login.html" class="login btn-header">会員ログイン</a>
             </li>
             <li>
-              <a href="./account/account_register.html" class="new btn">新規登録</a>
+              <a href="./account/account_register.html" class="new btn-header">新規登録</a>
             </li>
           </ul>
           <!-- メニューバー -->
@@ -61,54 +66,42 @@
       </div>
     </header>
     <!-- CM用の画像を５秒間隔でスライド表示 -->
-    <div class="slider-container">
-      <div class="slider-wrapper">
-        <div class="slide slide1">
-          <div class="caption">
-            <h2>Slide1</h2>
-            <p>ファッション業界でしばしば大ヒットを生み出してきたのは、
-              有力デザイナーや人気キャラクターとのコラボレーション企画です。
-              「ユニクロ（UNIQLO）」がファッションデザイナーのジル・サンダー氏と組んだ
-              コレクション「+J（プラスジェイ）」も11月13日の発売直後から、
-              公式サイトがつながりにくい状態になるほど大ヒット。</p>
-          </div>
+    <div class="container">
+      <div id="main_visual" class="carousel slide carousel-fade" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#main_visual" data-slide-to="0" class="active"></li>
+            <li data-target="#main_visual" data-slide-to="1"></li>
+            <li data-target="#main_visual" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="w-100" src="assets/img/image1.jpg" alt="">
+                <div class="carousel-caption d-none d-md-block text-dark">
+                    <h5>見出しテスト</h5>
+                    <p>スライドのキャプション文</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="img-fluid" src="assets/img/image2.jpg" alt="">
+            </div>
+            <div class="carousel-item">
+                <img class="img-fluid" src="assets/img/image3.jpg" alt="">
+            </div>
         </div>
-        <div class="slide slide2">
-          <div class="caption">
-            <h2>Slide2</h2>
-            <p>ファッション業界でしばしば大ヒットを生み出してきたのは、
-              有力デザイナーや人気キャラクターとのコラボレーション企画です。
-              「ユニクロ（UNIQLO）」がファッションデザイナーのジル・サンダー氏と組んだ
-              コレクション「+J（プラスジェイ）」も11月13日の発売直後から、
-              公式サイトがつながりにくい状態になるほど大ヒット。</p>
-          </div>
-        </div>
-        <div class="slide slide3">
-          <div class="caption">
-            <h2>Slide3</h2>
-            <p>ファッション業界でしばしば大ヒットを生み出してきたのは、
-              有力デザイナーや人気キャラクターとのコラボレーション企画です。
-              「ユニクロ（UNIQLO）」がファッションデザイナーのジル・サンダー氏と組んだ
-              コレクション「+J（プラスジェイ）」も11月13日の発売直後から、
-              公式サイトがつながりにくい状態になるほど大ヒット。</p>
-          </div>
-        </div>
-        <div class="slide slide1">
-          <div class="caption">
-            <h2>Slide1</h2>
-            <p>ファッション業界でしばしば大ヒットを生み出してきたのは、
-              有力デザイナーや人気キャラクターとのコラボレーション企画です。
-              「ユニクロ（UNIQLO）」がファッションデザイナーのジル・サンダー氏と組んだ
-              コレクション「+J（プラスジェイ）」も11月13日の発売直後から、
-              公式サイトがつながりにくい状態になるほど大ヒット。</p>
-          </div>
-        </div>
+        <a class="carousel-control-prev" href="#main_visual" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+            <span class="sr-only">前に戻る</span>
+        </a>
+        <a class="carousel-control-next" href="#main_visual" role="button" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+            <span class="sr-only">次に進む</span>
+        </a>
       </div>
     </div>
     <!-- プロフィール画像・紹介文を表示 -->
     <div class="profile-wrapper" id="profile-wrapper">
       <div class="profile">
-        <h2>〇〇のプロフィール</h2>
+        <h3>〇〇のプロフィール</h3>
         <img src="assets/img/common/logo.jpg" width="300" height="300">
       </div>
       <div class="cp_box">
@@ -134,7 +127,7 @@
     </div>
     <div class="introduce-wrapper" id="introduce-wrapper">
       <h2>〇〇の紹介動画</h2>
-      <div class="container">
+      <div class="header-container">
         <div class="iframe-content">
           <iframe src="https://www.youtube.com/embed/tCZdYqG4QcI?controls=0&rel=0&fs=0&modestbranding=1"
             frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -203,9 +196,9 @@
       </div>
     </div>
     <div class="message-wrapper">
-      <div class="container">
-        <h2>あなたも</h2>
-        <h3>一緒にチャレンジを</h3>
+      <div class="header-container">
+        <h3>あなたも</h3>
+        <h5>一緒にチャレンジを</h5>
         <ul class="follow-fotter">
           <li>
             <a href="https://www.twitter.com"></a>
