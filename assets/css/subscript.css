@@ -116,6 +116,16 @@ header {
     width: 100%;
 }
 
+.cat-link {
+    color: black;
+    text-decoration: none;
+}
+
+.cat-link-selected {
+    color: black;
+    font-weight: bold;
+}
+
 /* サブスク画面 */
 .subarchive {
     display: block;
