@@ -1,11 +1,63 @@
+<?PHP
+	include_once '../common/function.inc';
+	include_once '../include/pgsql.inc';
 
+	session_start();
+	
+	$cDB = new Pgsql;
+	
+	$cDB->ConnectDB();
+	
+	$arrData = $arrCategory = [];
+
+	// サブスクインフォ取得
+	$strWhere = sprintf( "serialnumber = '%s'", $_REQUEST['no'] );
+	$cDB->Select( $arrData, 'user0001.pba_subscription_info', '*', $strWhere );
+	if ( count( $arrData ) < 1 ) {
+		print "詳細情報がありません";
+		exit;
+	} else if ( count( $arrData ) > 1 ) {
+		print "ページに問題が発生しました";
+		exit;
+	}
+	
+	// カテゴリマスタ取得
+	$cDB->Select( $arrCategory, 'user0001.pba_subscription_category' );
+	
+	// 定数系（あとでdefineにして別ファイルにまとめる）
+	$strYtubeUrlBase = 'https://www.youtube.com/embed/%s?controls=0&rel=0&fs=0&modestbranding=1';
+	$strSumbnailBase = 'http://img.youtube.com/vi/%s/mqdefault.jpg';
+	$strCategoryBase = '<li class="cat-item"><a class="%s" href="sublist.php?category=%s">%s</a></li>';
+	
+	/*
+	 * 詳細情報セット
+	 */
+	$strYtubeUrl = sprintf( $strYtubeUrlBase, $arrData[0]['youtubeurl'] );
+	
+	/*
+	 * カテゴリエリア
+	 */
+	$strStyle = 'cat-link';
+	if ( $_SESSION['category'] == '0000' ) {
+		$strStyle = 'cat-link-selected';
+	}
+	$strCategory = sprintf ( $strCategoryBase, $strStyle, '0000', 'すべて' );
+	foreach ( $arrCategory as $arrRow ) {
+		$strStyle = 'cat-link';
+		if ( $_SESSION['category'] == $arrRow['categorycode'] ) {
+			$strStyle = 'cat-link-selected';
+		}
+		$strCategory .= sprintf ( $strCategoryBase, $strStyle, $arrRow['categorycode'], $arrRow['categoryname'] );
+	}
+
+?>
 <!DOCTYPE html>
 <html lang="jp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/reset.css?2" type="text/css">
-    <link rel="stylesheet" href="../assets/css/subscript.css?2" type="text/css">
+    <link rel="stylesheet" href="../assets/css/reset.css" type="text/css">
+    <link rel="stylesheet" href="../assets/css/subscript.css" type="text/css">
     <!-- SNSアイコン -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -26,11 +78,11 @@
         <div class="subarchive">
             <div class="iframe-content">
                 <iframe
-                src="https://www.youtube.com/embed/tCZdYqG4QcI?controls=0&rel=0&fs=0&modestbranding=1"
+				<?PHP printf( 'src="%s"', $strYtubeUrl ); ?>
                 frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen>
                 </iframe>
-                <h2>リュウの紹介動画 ～ </h2>
+                <h2><?PHP print $arrData[0]['youtubetitle']; ?></h2>
             </div>
             <div class="cp_box">
 	            <input id="cp01" type="checkbox">
@@ -67,8 +119,7 @@
         <aside class="widget">
             <h2 class="heading heading-widget">カテゴリ</h2>
             <ul>
-                <li class="cat-item">エンジニア</li>
-                <li class="cat-item">資産形成</li>
+				<?PHP print $strCategory; ?>
             </ul>
         </aside>
     </div>

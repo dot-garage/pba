@@ -45,6 +45,7 @@ header {
     width: calc(50% - 20px);
     position: relative;
     margin: 0 0 40px 20px;
+    cursor: pointer;
 }
 
 /* サムネイル画像 */

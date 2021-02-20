@@ -2,30 +2,33 @@
 	include_once '../common/function.inc';
 	include_once '../include/pgsql.inc';
 
+	session_start();
+	
 	$cDB = new Pgsql;
 	
-	if ( !isset( $_REQUEST['category'] ) ) {
-		$_REQUEST['category'] = '0000';
+	if ( isset( $_REQUEST['category'] ) ) {
+		$_SESSION['category'] = $_REQUEST['category'];
+	} else {
+		$_REQUEST['category'] = isset( $_SESSION['category'] ) ? $_SESSION['category'] : '0000';
 	}
 	
 	$cDB->ConnectDB();
 	
 	$arrData = $arrCategory = [];
 	
-	// カテゴリマスタ取得
-	$cDB->Select( $arrCategory, 'user0001.pba_subscription_category' );
-
 	// サブスクインフォ取得
 	$strWhere = $_REQUEST['category'] == '0000'? '' : sprintf( "categorycode = '%s'", $_REQUEST['category'] );
-	$cDB->Select( $arrData, 'user0001.pba_subscription_info', '*', $strWhere );
+	$cDB->Select( $arrData, 'user0001.pba_subscription_info', '*', $strWhere, 'registerdate DESC' );
+	
+	// カテゴリマスタ取得
+	$cDB->Select( $arrCategory, 'user0001.pba_subscription_category' );
 	
 	// 定数系（あとでdefineにして別ファイルにまとめる）
-	$strYtubeUrlBase = 'https://youtu.be/';
 	$strSumbnailBase = 'http://img.youtube.com/vi/%s/mqdefault.jpg';
 	$strCategoryBase = '<li class="cat-item"><a class="%s" href="sublist.php?category=%s">%s</a></li>';
 	$strInfoBase =
 <<< INFO
-			<div class="archive-item">
+			<div class="archive-item" onclick="location.href='subitem.php?no=%s'">
                 <div class="sumbnail">
                     <a href=""><img width="730px" height="410px" src="%s" alt=""></a>
                 </div>
@@ -36,6 +39,21 @@
                 <p>%s</p>
             </div>
 INFO;
+	
+	/*
+	 * INFOエリア
+	 */
+	$strInfo = '';
+	foreach ( $arrData as $arrRow ) {
+		$strSumbnail = sprintf( $strSumbnailBase, $arrRow['youtubeurl'] );
+		$strInfo .= sprintf ( $strInfoBase,
+				$arrRow['serialnumber'],
+				$strSumbnail,
+				FromatDate( $arrRow['registerdate'] ),
+				$arrRow['youtubetitle'],
+				$arrRow['content']
+				);		
+	}
 	
 	/*
 	 * カテゴリエリア
@@ -51,20 +69,6 @@ INFO;
 			$strStyle = 'cat-link-selected';
 		}
 		$strCategory .= sprintf ( $strCategoryBase, $strStyle, $arrRow['categorycode'], $arrRow['categoryname'] );
-	}
-	
-	/*
-	 * INFOエリア
-	 */
-	$strInfo = '';
-	foreach ( $arrData as $arrRow ) {
-		$strSumbnail = sprintf( $strSumbnailBase, $arrRow['youtubeurl'] );
-		$strInfo .= sprintf ( $strInfoBase,
-				$strSumbnail,
-				FromatDate( $arrRow['registerdate'] ),
-				$arrRow['youtubetitle'],
-				$arrRow['content']
-				);		
 	}
 
 ?>
