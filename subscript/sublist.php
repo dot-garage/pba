@@ -23,11 +23,8 @@
 	// カテゴリマスタ取得
 	$cDB->Select( $arrCategory, 'user0001.pba_subscription_category' );
 	
-	// 定数系（あとでdefineにして別ファイルにまとめる）
-	$strSumbnailBase = 'http://img.youtube.com/vi/%s/mqdefault.jpg';
 	$strCategoryBase = '<li class="cat-item"><a class="%s" href="sublist.php?category=%s">%s</a></li>';
-	$strInfoBase =
-<<< INFO
+	$strInfoBase = <<< INFO
 			<div class="archive-item" onclick="location.href='subitem.php?no=%s'">
                 <div class="sumbnail">
                     <a href=""><img width="730px" height="410px" src="%s" alt=""></a>
@@ -45,13 +42,13 @@ INFO;
 	 */
 	$strInfo = '';
 	foreach ( $arrData as $arrRow ) {
-		$strSumbnail = sprintf( $strSumbnailBase, $arrRow['youtubeurl'] );
+		$strSumbnail = sprintf( BASE_SUMBNAIL, $arrRow['youtubeurl'] );
 		$strInfo .= sprintf ( $strInfoBase,
 				$arrRow['serialnumber'],
 				$strSumbnail,
 				FromatDate( $arrRow['registerdate'] ),
 				$arrRow['youtubetitle'],
-				$arrRow['content']
+				$arrRow['subsctext']
 				);		
 	}
 	

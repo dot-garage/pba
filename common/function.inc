@@ -1,5 +1,7 @@
 <?php
 
+include_once 'define.inc';
+
 /**
  * 
  * 日付のフォーマットを行う
