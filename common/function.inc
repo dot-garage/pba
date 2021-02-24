@@ -19,4 +19,18 @@ function FromatDate( $AstrDate, $AstrDiv = '.' )
 	return $ret;
 }
 
+/**
+ * 
+ * youtubeURLから特定コードを取り出す
+ * 加工しやすいようにコードのみをDBに格納する
+ * 
+ * @param string $AstrURL もとのURL
+ * @return string 切り出した文字列
+ */
+function GetYoutubeCode( $AstrURL )
+{
+	$strRet = str_replace('https://www.youtube.com/watch?v=', '', $AstrURL );
+	return $strRet;
+}
+
 ?>

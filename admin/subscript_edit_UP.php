@@ -5,41 +5,35 @@
 	session_start();
 	
 	$_SESSION['present'] = VIEW_SUBSCRIPTION;
-	
-	header('location: edit.php');
-	exit;
 
-var_dump($_REQUEST);
-exit;
-	
-	$_SESSION['DB'] = 'user0001';
-	
+	$arrInsert = $_REQUEST;
+
+	$today = date('Ymd');
+
 	$cDB = new Pgsql;
 	
 	$cDB->ConnectDB();
 	
-/* カンペ
-serialnumber
-youtubeurl
-youtubetitle
-addfile
-content
-registerdate
-categorycode
- */
-	$arrData = [];
+	$strYURL = GetYoutubeCode( $arrInsert['youtubeurl'] );
+	$objFile = $arrInsert['addfile'] == '' ? 'NULL' : $arrInsert['addfile'];
 	
-	// サブスクインフォ取得
-	$cDB->Select( $arrData, $_SESSION['DB'] . '.pba_subscription_info', '*', '', 'serialnumber' );
+	$strSQL = 'INSERT INTO'
+			.	' user0001.pba_subscription_info'
+			. ' SELECT'
+			.	" lpad( cast( cast( max( serialnumber ) as integer )+1 as character), 10, '0' ) AS maxdata,"
+			.	"'{$strYURL}',"
+			.	"'{$arrInsert['youtubetitle']}',"
+			.	$objFile . ","
+			.	"'{$arrInsert['subsctext']}',"
+			.	"'{$today}',"
+			.	"'{$arrInsert['categorycode']}'"
+			. ' FROM'
+			.	' user0001.pba_subscription_info';
+	$cDB->SqlExec($strSQL);
 	
-	$strInfo = '';
-	foreach ( $arrData as $arrRow ) {
-		$strInfo .= '<tr>';
-		$strInfo .= '<td>' . $arrRow['youtubetitle'] . '</td>';
-		$strInfo .= '<td>' . $arrRow['content'] . '</td>';
-		$strInfo .= '<td>' . $arrRow['addfile'] . '</td>';
-		$strInfo .= sprintf( '<td><input type="button" name="%s" value="編集"></td>', $arrRow['serialnumber'] );
-		$strInfo .= '</tr>';
-	}
-
+	$_SESSION['result'] = '登録しました';
+	
+	header('location: edit.php');
+	exit;
+	
 ?>

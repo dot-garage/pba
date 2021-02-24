@@ -3,6 +3,8 @@
 	include_once '../include/pgsql.inc';
 	
 	$strChecked = $_SESSION['present'] == VIEW_SUBSCRIPTION ? ' checked="checked"' : '';
+	$strResult = $_SESSION['result'];
+	$_SESSION['result'] = '';
 	
 	$cDB = new Pgsql;
 	
@@ -56,6 +58,7 @@ print <<< HTML
 					<label for="sitename">登録内容</label>
 				</th>
 				<td>
+					<p class='result'>{$strResult}</p>
 					<p class="description">Youtube URL</p>
 					<input name="youtubeurl" type="text" id="youtubelink" value="" class="regular-text">
 					<p class="description">タイトル</p>

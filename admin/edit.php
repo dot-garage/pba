@@ -5,6 +5,9 @@
 	
 	$_SESSION['DB'] = 'user0001';
 	
+	if ( !isset( $_SESSION['result'] ) ) { 
+		$_SESSION['result'] = '';
+	}
 	if ( !isset( $_SESSION['present'] ) ) { 
 		$_SESSION['present'] = VIEW_GENERAL;
 	}

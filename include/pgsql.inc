@@ -69,12 +69,11 @@ class Pgsql
 	 * INSERT文の実行
 	 * 
 	 * @param string $Atable テーブル
-	 * @param string $Acol カラム
 	 * @param string $Aval 値
 	 */
-	function Insert( $Atable, $Acol, $Aval )
+	function Insert( $Atable, $Aval )
 	{
-		$sql = sprintf( "INSERT INTO %s ( %s ) VALUE ( %s )", $Atable, $Acol, $Aval );
+		$sql = sprintf( "INSERT INTO %s VALUE ( %s )", $Atable, $Aval );
 		// クエリの実行
 		$this->SqlExec( $sql );
 		
