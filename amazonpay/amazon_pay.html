@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Pay</title>
+</head>
+<body>
+    <script async="async" src='https://static-fe.payments-amazon.com/OffAmazonPayments/jp/sandbox/lpa/js/Widgets.js'></script>
+    <div id="AmazonPayButton"></div>
+    <script>
+        window.onAmazonLoginReady = function () {
+            // クライアントIDの設定
+            amazon.Login.setClientId('amzn1.application-oa2-client.18211a8225a34204bdee2e55d6e308ae');
+        };
+        window.onAmazonPaymentsReady = function() {
+            showButton();
+        };
+    </script>
+    <script>
+    function showButton() {
+        var authRequest;
+            // 出品者IDの設定
+            OffAmazonPayments.Button("AmazonPayButton", "A2GXLK4DFZJKTD", {
+            type: "PwA",
+            color: "Gold",
+            size: "large",
+            language: "jp",
+            authorization: function () {
+                loginOptions = { scope: "profile payments:widget", popup: true };
+                authRequest = amazon.Login.authorize(loginOptions, "--- REDIRECT_URL ---");
+            },
+            onError: function(error) {
+                // error handling
+            }
+        });
+    };
+    </script>    
+</body>
+</html>

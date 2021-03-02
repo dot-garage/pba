@@ -1,0 +1,227 @@
+
+html, body, div, span, applet, object, iframe,
+p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+/* ◎ここから */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+}
+
+
+/* header */
+.header {
+    padding: 30px;
+    transition: all .5s;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+
+.header__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__nav ul {
+    display: flex;
+}
+
+.header__nav ul li {
+    margin-left: 30px;
+}
+
+.header.change-color {
+    background-color:black;
+}
+
+
+/* header */
+
+/* 各ブロック */
+.block-section {
+    text-align: center;
+    background-color: black;
+    padding-top: 35px;
+}
+
+.box-inner {
+    background-color: white;
+    margin-bottom: 30px;
+}
+
+.icon-container {
+    position: relative;
+    z-index: 2;
+}
+
+.icon-container i {
+    width: 80px;
+    height: 80px;
+    border: solid 1px green;
+    background-color: white;
+    border-radius: 50%;
+    font-size: 20px;
+    padding: 30px;
+}
+
+.box-content {
+    color: #565656;
+    background-color: #f8f8f9;
+    border:1px solid rgba(232,232,232,0.45);
+    margin-top: -33px;
+    padding: 58px 40px 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.box-content:hover {
+    transition: 1s;
+    color:white;
+    background-color: green;
+}
+
+/* ページ紹介 */
+.about-inner {
+    color: white;
+    text-align: right;
+    padding-right: 45px;
+}
+
+.about-list {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.about-top{
+    text-align: right;
+    margin: 20px 0;
+}
+
+.about-list-content {
+    float: left;
+    width: calc(100% - 80px);
+}
+
+.icon-section {
+    float: right;
+}
+
+.icon-section i{
+    background-color: #028484;
+    border-radius: 100%;
+    color: white;
+    display: inline-block;
+    font-size: 24px;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    line-height: 60px;
+    margin-left: 30px;
+}
+
+/* お問い合わせ */
+.bg-fix {
+ background-attachment: fixed;
+}
+
+.highright {
+    background-image: url(../img/image3.jpg);
+    padding: 90px;
+}
+
+/*モニターテキスト*/
+.monitor-text{
+    background-color: #028484;
+    color: white;
+    font-size: 16px;
+    line-height: 26px;
+    padding-top: 60px;
+    padding-bottom: 100px;
+}
+
+/*フッター*/
+footer {
+    background-color: black;
+    color: whitesmoke;
+    text-align: center;
+}
+.footer-text {
+    padding: 10px 0 20px 0;
+}
+
+/* 画面遷移ボタン */
+.back-to-top {
+    background-color: #028484;
+    color: white;
+    border-radius: 2px;
+    bottom: 15px;
+    display: inline-block;
+    font-size: 26px;
+    padding: 8px 13px 9px;
+    position: fixed;
+    right: 15px;
+    z-index: 9999;
+}
+
+/* レスポンシブ */
+@media (max-width: 600px) {
+    .header__nav {
+        display: none;
+    } 
+
+    h2,
+    h3 {
+        font-size: 12px;
+    }
+}
